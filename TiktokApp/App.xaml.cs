@@ -14,7 +14,6 @@ namespace TiktokApp
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
             MainPage = new Reproductor();
         }
 

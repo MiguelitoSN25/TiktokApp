@@ -6,56 +6,65 @@
              xmlns:video ="clr-namespace:Octane.Xamarin.Forms.VideoPlayer;assembly=Octane.Xamarin.Forms.VideoPlayer">
     <Grid BackgroundColor="Black"
         RowDefinitions="*,60">
-        <Grid>
-            <video:VideoPlayer 
+        <CarouselView ItemsSource="{Binding Listavideo}"
+                      x:Name="listavideos">
+            <CarouselView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical"
+                                   SnapPointsType="MandatorySingle"/>
+            </CarouselView.ItemsLayout>
+
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <video:VideoPlayer Source="{Binding video}"
                AutoPlay="True"
                Repeat="True"
                x:Name="rvideo"/>
 
-            <StackLayout HorizontalOptions="Start"
+                        <StackLayout HorizontalOptions="Start"
                          VerticalOptions="End"
                          Margin="12,0,0,12">
-                <Label Text="@star_tyo"
+                            <Label Text="@star_tyo"
                        TextColor="White"
                        FontAttributes="Bold"/>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="MOOD"
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="MOOD"
                        TextColor="White"
                        FontAttributes="Bold"
                            />
-                    <StackLayout Orientation="Horizontal">
+                                <StackLayout Orientation="Horizontal">
 
-                        <Label Text="#Viral"
+                                    <Label Text="#Viral"
                        TextColor="White"
                        FontAttributes="Bold"/>
-                    </StackLayout>
+                                </StackLayout>
 
-                </StackLayout>
-                
-                <StackLayout Orientation="Horizontal"
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal"
                          HorizontalOptions="Start">
-                <Image Source="https://cdn-icons-png.flaticon.com/512/651/651758.png"
+                                <Image Source="https://cdn-icons-png.flaticon.com/512/651/651758.png"
                        HeightRequest="18"
                        />
-                <Label Text="Nombre de cancion"
+                                <Label Text="Nombre de cancion"
                        TextColor="White"
                        FontAttributes="Bold">
-                    
-                </Label>
-            </StackLayout>
-            </StackLayout>
-            <!--#region Region disco giratorio -->
-            <StackLayout VerticalOptions="End"
+
+                                </Label>
+                            </StackLayout>
+                        </StackLayout>
+                        <!--#region Region disco giratorio -->
+                        <StackLayout VerticalOptions="End"
                          HorizontalOptions="End"
                          WidthRequest="80"
                          Spacing="30"
                          Margin="0,0,12,12">
 
-                <Grid>
-                    <ImageCircular:CircleImage Source="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2019/11/14/15737172127732.jpg"
+                            <Grid>
+                                <ImageCircular:CircleImage Source="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2019/11/14/15737172127732.jpg"
                                                BorderColor="White"
                                                BorderThickness="2"/>
-                    <Button BackgroundColor="#F5004E"
+                                <Button BackgroundColor="#F5004E"
                             HeightRequest="20"
                             WidthRequest="20"
                             CornerRadius="15"
@@ -63,7 +72,7 @@
                             VerticalOptions="End"
                             TranslationY="8"
                             />
-                    <Label Text="+"
+                                <Label Text="+"
                            TextColor="White"
                            VerticalOptions="End"
                            FontAttributes="Bold"
@@ -71,59 +80,73 @@
                            VerticalTextAlignment="End"
                            FontSize="18"
                            TranslationY="8.5"/>
-                </Grid>
+                            </Grid>
 
-                <StackLayout>
-                    <Image Source="https://pics.freeicons.io/uploads/icons/png/3725454031582806950-512.png"
+                            <StackLayout>
+                                <Image Source="https://pics.freeicons.io/uploads/icons/png/3725454031582806950-512.png"
                            HeightRequest="45"></Image>
 
-                    <Label Text="278.2k"
+                                <Label Text="278.2k"
                            FontSize="18"
                            TextColor="White"
                            FontAttributes="Bold"
                            HorizontalTextAlignment="Center">
 
-                    </Label>
+                                </Label>
 
-                </StackLayout>
-                <StackLayout>
-                    <Image Source="https://pics.freeicons.io/uploads/icons/png/40979193516313447344152-512.png"
+                            </StackLayout>
+                            <StackLayout>
+                                <Image Source="https://pics.freeicons.io/uploads/icons/png/40979193516313447344152-512.png"
                            HeightRequest="45"></Image>
 
-                    <Label Text="1488"
+                                <Label Text="1488"
                            FontSize="18"
                            TextColor="White"
                            FontAttributes="Bold"
                            HorizontalTextAlignment="Center">
 
-                    </Label>
+                                </Label>
 
-                </StackLayout>
-                <StackLayout>
-                    <Image Source="https://cdn-icons.flaticon.com/png/512/2958/premium/2958864.png?token=exp=1645284374~hmac=2d1acc6c342e6f33b5b7051131540ad2"
+                            </StackLayout>
+                            <StackLayout>
+                                <Image Source="https://cdn-icons.flaticon.com/png/512/2958/premium/2958864.png?token=exp=1645284374~hmac=2d1acc6c342e6f33b5b7051131540ad2"
                            HeightRequest="45"></Image>
 
-                    <Label Text="12.6k"
+                                <Label Text="12.6k"
                            FontSize="18"
                            TextColor="White"
                            FontAttributes="Bold"
                            HorizontalTextAlignment="Center">
 
-                    </Label>
+                                </Label>
 
-                </StackLayout>
+                            </StackLayout>
 
-                <Grid>
-                    <Image Source="https://cdn-icons-png.flaticon.com/512/1687/1687561.png"/>
-                    <ImageCircular:CircleImage Source="https://cdna.artstation.com/p/assets/images/images/031/183/032/large/aaron-merino-estevez-joseph-render-def-22.jpg" 
+                            <Grid>
+                                <Image Source="https://cdn-icons-png.flaticon.com/512/1687/1687561.png"/>
+                                <ImageCircular:CircleImage Source="https://cdna.artstation.com/p/assets/images/images/031/183/032/large/aaron-merino-estevez-joseph-render-def-22.jpg" 
                                                Margin="19"/>
-                </Grid>
+                            </Grid>
 
-            </StackLayout>
-            <!--#endregion-->
-        </Grid>
-        
-            <StackLayout HeightRequest="40" Orientation="Horizontal"
+                        </StackLayout>
+                        <!--#endregion-->
+                        <Image Source="https://cdn-icons-png.flaticon.com/512/0/375.png"
+                               HeightRequest="40"
+                               VerticalOptions="Center"
+                               IsVisible="{Binding IndicadorIconoPlay}"/>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding BindingContext.Seleccionarcommand , Source={x:Reference
+                                listavideos}}" CommandParameter="{Binding .}"
+                                                  NumberOfTapsRequired="2"/>
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+
+        </CarouselView>
+
+
+        <StackLayout HeightRequest="40" Orientation="Horizontal"
                      VerticalOptions="Start"
                      Margin="20">
             <Image Source="https://pics.freeicons.io/uploads/icons/png/7192559921636194795-64.png"/>
@@ -144,7 +167,7 @@
                      VerticalOptions="Start"
                 />
 
-                
+
 
                 <Label Text="Para ti"
                TextColor="White"
@@ -160,9 +183,9 @@
 
             </StackLayout>
 
-          
+
         </StackLayout>
-        
+
         <StackLayout Background="black"
             Grid.Row="1"
             Orientation="Horizontal"
@@ -188,7 +211,7 @@
                    FontAttributes="Bold"
                    FontSize="12"/>
             </StackLayout>
-            
+
             <Grid HorizontalOptions="CenterAndExpand">
 
                 <BoxView BackgroundColor="#ff02a0"
@@ -243,6 +266,6 @@
             </StackLayout>
 
         </StackLayout>
-      
+
     </Grid>
 </ContentPage>

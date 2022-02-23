@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using TiktokApp.Views;
+using TiktokApp.ViewModels;
 
 namespace TiktokApp.Views
 {
@@ -14,7 +16,7 @@ namespace TiktokApp.Views
         public Reproductor()
         {
             InitializeComponent();
-            rvideo.Source = "https://firebasestorage.googleapis.com/v0/b/tiktokapp-d7b69.appspot.com/o/descargar.mp4?alt=media&token=84ee1798-7013-4bfd-ae2f-0354555280e1";
+            BindingContext = new Vmreproductor(Navigation);
         }
     }
 }
